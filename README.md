@@ -1,16 +1,101 @@
-# ecommrece_test
+# تطبيق متجر المنتجات - دليل تعليمي للـ Flutter API
 
-A new Flutter project.
+هذا المشروع هو دليل تعليمي مخصص للطلاب والمبتدئين في تعلم كيفية التعامل مع الـ API في تطبيقات Flutter. يوضح المشروع الممارسات الأساسية والأفضل في تنظيم الكود وهيكلة المشروع.
 
-## Getting Started
+## الهدف التعليمي
 
-This project is a starting point for a Flutter application.
+يهدف هذا المشروع إلى:
+- تعليم كيفية التعامل مع API في Flutter
+- فهم هيكلة المشروع بشكل منظم
+- التعرف على أفضل الممارسات في برمجة تطبيقات Flutter
+- تعلم استخدام FutureBuilder للتعامل مع البيانات غير المتزامنة
 
-A few resources to get you started if this is your first Flutter project:
+## هيكلية المشروع
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+```
+lib/
+├── models/
+│   └── products.dart      # نموذج البيانات للمنتجات
+├── services/
+│   └── product_service.dart    # خدمة الاتصال بالـ API
+├── pages/
+│   └── products_page.dart      # صفحة عرض المنتجات
+└── main.dart                   # نقطة البداية للتطبيق
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## شرح المكونات
+
+### 1. نموذج البيانات (Model)
+`products.dart` يحتوي على:
+- تعريف فئة Products
+- الخصائص الأساسية للمنتج (الاسم، السعر، المخزون، الصورة)
+- دالة fromJson لتحويل البيانات من API
+
+### 2. خدمة API (Service)
+`product_service.dart` يتضمن:
+- دوال للاتصال بالـ API
+- معالجة الاستجابات والأخطاء
+- تحويل البيانات إلى نماذج Products
+
+### 3. واجهة المستخدم (UI)
+`products_page.dart` يحتوي على:
+- استخدام FutureBuilder للتعامل مع البيانات غير المتزامنة
+- عرض المنتجات في شكل شبكة
+- معالجة حالات التحميل والأخطاء
+- دعم خاصية السحب للتحديث
+
+## كيفية البدء
+
+1. قم بتثبيت Flutter على جهازك
+2. استنسخ المشروع:
+```bash
+git clone https://github.com/Amjed510/ecommrece_test.git
+```
+3. قم بتثبيت التبعيات:
+```bash
+flutter pub get
+```
+4. قم بتعديل رابط API في ملف `product_service.dart`
+5. شغل التطبيق:
+```bash
+flutter run
+```
+
+## الميزات
+
+- عرض قائمة المنتجات من API
+- تصميم متجاوب مع حجم الشاشة
+- معالجة حالات التحميل والأخطاء
+- دعم تحديث البيانات بالسحب
+- عرض صور المنتجات بتنسيق Base64
+- واجهة مستخدم بسيطة وأنيقة
+
+## نصائح تعليمية
+
+1. ابدأ بدراسة نموذج البيانات `products.dart`
+2. انتقل إلى فهم كيفية الاتصال بالـ API في `product_service.dart`
+3. اطلع على كيفية عرض البيانات في `products_page.dart`
+4. جرب تعديل التصميم وإضافة ميزات جديدة
+
+## المساهمة
+
+نرحب بمساهماتكم! إذا كان لديك اقتراحات لتحسين هذا الدليل التعليمي، يرجى:
+1. عمل Fork للمشروع
+2. إنشاء فرع جديد للميزة
+3. تقديم Pull Request
+
+## ملاحظات
+
+- هذا المشروع مخصص للأغراض التعليمية
+- يمكن استخدامه كأساس لمشاريع حقيقية
+- نرحب بالاقتراحات والتحسينات
+
+## التواصل
+
+إذا كان لديك أي أسئلة أو استفسارات، يمكنك:
+- فتح issue في GitHub
+- التواصل عبر GitHub Discussions
+
+## الترخيص
+
+هذا المشروع متاح للاستخدام التعليمي بحرية.
